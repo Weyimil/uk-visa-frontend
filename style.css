@@ -1,0 +1,275 @@
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+  color: #333;
+}
+header {
+  text-align: center;
+  padding: 2rem 1rem 1rem;
+}
+h1 {
+  margin-bottom: 0.5rem;
+  color: #1a73e8;
+}
+p {
+  color: #555;
+  font-size: 1rem;
+}
+main {
+  padding: 1rem;
+}
+.visa-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+.card {
+  background: white;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.card a {
+  text-decoration: none;
+  color: #1a73e8;
+  font-weight: 600;
+  display: block;
+}
+footer {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #aaa;
+  padding: 1rem;
+}
+.cat-label {
+  display: inline-block;
+  padding: 2px 8px;
+  margin-bottom: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.cat-label:contains("Work")    { background: #28a745; } /* green */
+.cat-label:contains("Visit")   { background: #17a2b8; } /* teal */
+.cat-label:contains("Study")   { background: #ffc107; } /* yellow */
+.cat-label:contains("Family")  { background: #6f42c1; } /* purple */
+.cat-label:contains("Other")   { background: #6c757d; } /* gray */
+
+.row-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: box-shadow 0.2s ease;
+}
+.row-card:hover {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+.row-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.row-info {
+  display: flex;
+  flex-direction: column;
+}
+.visa-title {
+  font-weight: bold;
+  color: #333;
+  margin-top: 4px;
+}
+.cat-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-bottom: 4px;
+  display: inline-block;
+  color: #fff;
+}
+.row-card[data-cat="Work"] .cat-label    { background: #28a745; }
+.row-card[data-cat="Visit"] .cat-label   { background: #17a2b8; }
+.row-card[data-cat="Study"] .cat-label   { background: #ffc107; color: #000; }
+.row-card[data-cat="Family"] .cat-label  { background: #6f42c1; }
+.row-card[data-cat="Other"] .cat-label   { background: #6c757d; }
+
+.btn {
+  background-color: #0077cc;
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+.btn:hover {
+  background-color: #005fa3;
+}
+
+.row-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.row-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.visa-title {
+  font-weight: bold;
+  color: #333;
+  flex: 1;
+}
+
+.row-card[data-cat="Protection Visa"] .cat-label     { background: #e83e8c; }
+.row-card[data-cat="Settlement Visa"] .cat-label     { background: #20c997; }
+.row-card[data-cat="Transit Visa"] .cat-label        { background: #fd7e14; }
+.row-card[data-cat="Business Visa"] .cat-label       { background: #6610f2; }
+
+.category-heading {
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: #fff;
+  padding: 5px 10px;
+  margin-bottom: 6px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.row-card[data-cat="Work Visa"] .category-heading { background: #28a745; }
+.row-card[data-cat="Visit Visa"] .category-heading { background: #17a2b8; }
+.row-card[data-cat="Study Visa"] .category-heading { background: #ffc107; color: #000; }
+.row-card[data-cat="Family Visa"] .category-heading { background: #6f42c1; }
+.row-card[data-cat="Other Visa"] .category-heading { background: #6c757d; }
+
+.filter-buttons {
+  text-align: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.filter-btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  background-color: #e0e0e0;
+  color: #333;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background-color: #0077cc;
+  color: white;
+}
+
+.search-box {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+#searchInput {
+  width: 300px;
+  padding: 8px 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.no-results {
+  text-align: center;
+  color: #999;
+  font-size: 1.1rem;
+  padding: 2rem;
+}
+.row-card[data-cat="List Of Visa"] .category-heading {
+  background: #d63384; /* Pink-purple highlight */
+  color: white;
+}
+.priority-visa {
+  background-color: #e7f5ff;
+  border-left: 5px solid #228be6;
+}
+
+.tag {
+  background-color: #228be6;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+.row-card[data-cat="Benefits & Welfare"]              { background: #fff3bf; }
+.row-card[data-cat="Life Events"]                     { background: #fde2e4; }
+.row-card[data-cat="Business & Self‑Employment"]      { background: #e7f5ff; }
+.row-card[data-cat="Citizenship & Residency"]         { background: #d3f9d8; }
+.row-card[data-cat="Crime & Courts"]                  { background: #fff3f0; }
+.row-card[data-cat="Driving & Transport"]             { background: #e5dbff; }
+.row-card[data-cat="Education & Learning"]           { background: #fff9db; }
+.row-card[data-cat="Employing Staff"]                 { background: #e7e5ff; }
+.row-card[data-cat="Housing & Local Services"]        { background: #dbf4ff; }
+.row-card[data-cat="Money & Taxes"]                  { background: #f0f5ff; }
+.row-card[data-cat="Passports & Travel"]             { background: #ffefd3; }
+.row-card[data-cat="Government Departments"]         { background: #f9f0ff; }
+.row-card[data-cat="Other"]                           { background: #f8f9fa; }
+
+.category-heading {
+  font-weight: bold;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+  font-size: 0.9rem;
+}
+
+/* ✨ Per-category label background colors */
+.row-card[data-cat="Work Visa"] .category-heading              { background: #228be6; }
+.row-card[data-cat="Visit Visa"] .category-heading             { background: #2b8a3e; }
+.row-card[data-cat="Transit Visa"] .category-heading           { background: #5c940d; }
+.row-card[data-cat="Study Visa"] .category-heading             { background: #7950f2; }
+.row-card[data-cat="Family Visa"] .category-heading            { background: #f76707; }
+.row-card[data-cat="List Of Visa"] .category-heading           { background: #d63384; }
+
+/* Non-visa categories */
+.row-card[data-cat="Benefits & Welfare"] .category-heading              { background: #ff922b; }
+.row-card[data-cat="Life Events"] .category-heading                     { background: #f03e3e; }
+.row-card[data-cat="Business & Self‑Employment"] .category-heading      { background: #20c997; }
+.row-card[data-cat="Citizenship & Residency"] .category-heading         { background: #1c7ed6; }
+.row-card[data-cat="Crime & Courts"] .category-heading                  { background: #862e9c; }
+.row-card[data-cat="Driving & Transport"] .category-heading             { background: #12b886; }
+.row-card[data-cat="Education & Learning"] .category-heading            { background: #fab005; }
+.row-card[data-cat="Employing Staff"] .category-heading                 { background: #cc5de8; }
+.row-card[data-cat="Housing & Local Services"] .category-heading        { background: #15aabf; }
+.row-card[data-cat="Money & Taxes"] .category-heading                   { background: #5f3dc4; }
+.row-card[data-cat="Passports & Travel"] .category-heading              { background: #ff6b6b; }
+.row-card[data-cat="Government Departments"] .category-heading          { background: #868e96; }
+.row-card[data-cat="Other"] .category-heading                           { background: #adb5bd; }
+
+
